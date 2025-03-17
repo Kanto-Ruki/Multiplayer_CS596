@@ -10,8 +10,8 @@ namespace HelloWorld
         public NetworkVariable<int> symbol = new NetworkVariable<int>(); //The symbol the character throws
         public GameObject uiElement;
         public float momentum = 0;
-        public float speed = 2f;
-        public float direction = 0;
+        public float speed = 3f;
+        public NetworkVariable<float> direction = new NetworkVariable<float>(); //Used to determine which direction to dash in
         public NetworkVariable<float> damage = new NetworkVariable<float>(); //How much dmg the player has taken
         public NetworkVariable<float> isWalking = new NetworkVariable<float>(); //If they are walking, animation control
         public AudioSource audioSource;
@@ -52,14 +52,19 @@ namespace HelloWorld
         [Rpc(SendTo.Server)]
         void SubmitPositionRequestRpc(RpcParams rpcParams = default) {
             var nPosition = GetPositionOnPlane();
+            if(Vector3.Distance(nPosition,transform.position) < 0.001f) {
+                UpdateAnimatonRpc(0f);
+            } else {
+                UpdateAnimatonRpc(1f);
+            }
             transform.position = nPosition;
             Position.Value = nPosition;
             //transform.scale.x = 1/-1;
         }
 
         Vector3 GetPositionOnPlane() {
-            float x = Input.GetAxis("Horizontal");
-            float y = Input.GetAxis("Vertical");
+            float x = InputHorizontal();
+            float y = InputVertical();
 
             
             Vector3 movement = new Vector3(x, y, 0);
@@ -87,8 +92,19 @@ namespace HelloWorld
             return Position.Value + movement * speed * Time.deltaTime;
         }
 
+        //Function used for movement testing
         static Vector3 GetRandomPositionOnPlane() {
             return new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 1f);
+        }
+
+        //Get horizontal input
+        private int InputHorizontal() {
+            return (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
+        }
+
+        //Get vertical input
+        private int InputVertical() {
+            return (Input.GetKey(KeyCode.W) ? 1 : 0) - (Input.GetKey(KeyCode.S) ? 1 : 0);
         }
 
         [Rpc(SendTo.Server)]
@@ -99,7 +115,7 @@ namespace HelloWorld
 
         [Rpc(SendTo.Server)]
         void SubmitAttackRequestRpc(RpcParams rpcParams = default) {
-            
+            //
         }
 
         void Update() {
@@ -108,8 +124,10 @@ namespace HelloWorld
             transform.position = Position.Value;
             animator.SetFloat("xHorizontal", isWalking.Value);
             if(IsOwner) {
-                if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
+                if(InputHorizontal() != 0 || InputVertical() != 0) {
                     Move();
+                } else {
+                    UpdateAnimatonRpc(0f);
                 }
                 if(Input.GetKeyDown(KeyCode.Alpha1)) {
                     PlayTrumpetRpc(0);
@@ -132,6 +150,7 @@ namespace HelloWorld
             }
         }
 
+        //Play a trumpet sound to everyone
         [Rpc(SendTo.Everyone)]
         private void PlayTrumpetRpc(int sfx, RpcParams rpcParams = default) {
             audioSource.PlayOneShot(Trumpet[sfx], 0.5f);

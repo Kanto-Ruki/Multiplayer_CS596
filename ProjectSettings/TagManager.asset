@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ObjectPool
   - DeathPlane
+  - AudioSrc
   layers:
   - Default
   - TransparentFX
