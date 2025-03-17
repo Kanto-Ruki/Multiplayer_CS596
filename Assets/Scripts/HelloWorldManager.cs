@@ -5,7 +5,7 @@ namespace HelloWorld
 {
     public class HelloWorldManager : MonoBehaviour
     {
-        private NetworkManager m_NetworkManager;
+        private static NetworkManager m_NetworkManager;
 
         void Awake()
         {
@@ -23,7 +23,7 @@ namespace HelloWorld
             {
                 StatusLabels();
 
-                SubmitNewPosition();
+                //SubmitNewPosition();
             }
 
             GUILayout.EndArea();
@@ -46,10 +46,9 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-        static void SubmitNewPosition()
-        {
-            if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
-            {
+        /*static void SubmitNewPosition() {
+            //if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
+            //{
                 if (m_NetworkManager.IsServer && !m_NetworkManager.IsClient )
                 {
                     foreach (ulong uid in m_NetworkManager.ConnectedClientsIds)
@@ -61,7 +60,7 @@ namespace HelloWorld
                     var player = playerObject.GetComponent<HelloWorldPlayer>();
                     player.Move();
                 }
-            }
-        }
+            //}
+        }*/
     }
 }

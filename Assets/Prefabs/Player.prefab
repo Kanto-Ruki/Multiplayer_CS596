@@ -11,9 +11,13 @@ GameObject:
   - component: {fileID: 8834959573178909706}
   - component: {fileID: 2150902197585244585}
   - component: {fileID: -8055357374092097360}
+  - component: {fileID: -1760519467348644418}
+  - component: {fileID: -2580971688408472497}
+  - component: {fileID: -7816456633182491806}
+  - component: {fileID: 2921408004765767405}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2492021377779693996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4177230528
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2649323377
+  InScenePlacedSourceGlobalObjectIdHash: 4177230528
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -106,3 +110,106 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &-1760519467348644418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492021377779693996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0dc18c667faecf44aa98f625766aef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  renderer: {fileID: 0}
+  animator: {fileID: 0}
+  symbol:
+    m_InternalValue: 0
+  uiElement: {fileID: 2230407971909351485, guid: 381ffafba4fcb4248916d07094282fa6, type: 3}
+  momentum: 0
+  speed: 2
+  direction: 0
+  damage:
+    m_InternalValue: 0
+  isWalking:
+    m_InternalValue: 0
+  audioSource: {fileID: 0}
+  Trumpet:
+  - {fileID: 8300000, guid: 2b766ce7d30361f408f37bc3f29a44ea, type: 3}
+  - {fileID: 8300000, guid: 20d184565b627cc44bc5467291a92651, type: 3}
+  - {fileID: 8300000, guid: 21768586727675348969491ca482a8d4, type: 3}
+  - {fileID: 8300000, guid: aebf6dfc4e8da3245966ce06976726e6, type: 3}
+  - {fileID: 8300000, guid: 595f0732651229340a11c907e0f1649b, type: 3}
+  - {fileID: 8300000, guid: 1cd342a3f474f2942837bffe2c4b02e4, type: 3}
+  tumpetToot:
+    m_InternalValue: 0
+--- !u!58 &-2580971688408472497
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492021377779693996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.105
+--- !u!95 &-7816456633182491806
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492021377779693996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1a2852cc1fd0944ab4978cfab7568f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2921408004765767405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492021377779693996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 0
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 360
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0

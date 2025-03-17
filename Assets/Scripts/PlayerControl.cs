@@ -14,6 +14,7 @@ public class PlayerControl : NetworkBehaviour {
     static string s_ObjectPoolTag = "ObjectPool";
     NetworkObjectPool m_ObjectPool;
     Rigidbody2D m_Rigidbody2D;
+    private Animator animator;
 
     void Awake() {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -24,7 +25,7 @@ public class PlayerControl : NetworkBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-
+        animator = GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
         //SetPlayerUIVisibility(true);
     }
@@ -51,6 +52,11 @@ public class PlayerControl : NetworkBehaviour {
             return;
         }
 
+        if(Input.GetKeyDown(KeyCode.D)) {
+            animator.Play("Walk");
+        } else {
+            animator.Play("Idle");
+        }
         // movement
         move = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         rotate = Input.GetAxis("Horizontal") * (-rotateSpeed) * Time.deltaTime;

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638761375129255061
-    m_Hash: 480402257
+      ticks: 638773443162111125
+    m_Hash: 1945229389
   m_LockFileStatus:
     m_FilePath: C:/Users/TheMe/DoppelDual_CS596/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638761375129338984
-    m_Hash: 3761557869
+      ticks: 638773443162111125
+    m_Hash: 3036200733
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -954,6 +954,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.9
     - 3.2.0-pre.10
     - 3.2.0-pre.11
+    - 3.2.0-pre.12
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -972,6 +973,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.9
     - 3.2.0-pre.10
     - 3.2.0-pre.11
+    - 3.2.0-pre.12
     verified: 3.0.9
   dependencies:
   - name: com.unity.ugui
@@ -1109,6 +1111,7 @@ m_ResolvedPackages:
     - 1.7.4
     - 1.7.5
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -1130,6 +1133,7 @@ m_ResolvedPackages:
     - 1.7.4
     - 1.7.5
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -1297,12 +1301,14 @@ m_ResolvedPackages:
     - 1.7.6
     - 1.7.7
     - 1.7.8
+    - 1.8.0-pre.1
     - 1.8.0
     - 1.9.0
     - 1.9.1
     - 1.9.2
     - 1.9.4
     - 1.9.5
+    - 1.9.6
     compatible:
     - 1.8.0
     - 1.9.0
@@ -1310,6 +1316,7 @@ m_ResolvedPackages:
     - 1.9.2
     - 1.9.4
     - 1.9.5
+    - 1.9.6
     verified: 1.8.0
   dependencies:
   - name: com.unity.ugui
@@ -3339,10 +3346,20 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 0.1.6-preview.2
+    - 1.0.0-preview.1
+    - 1.10.0-preview.1
+    - 1.10.1-preview.1
     - 1.10.1
+    - 1.10.2
+    - 1.11.4
+    - 1.11.5
     compatible:
     - 1.10.1
-    verified: 1.10.1
+    - 1.10.2
+    - 1.11.4
+    - 1.11.5
+    verified: 1.10.2
   dependencies: []
   resolvedDependencies: []
   keywords: []
@@ -3356,7 +3373,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637437477070000000
   documentationUrl: 
   hasRepository: 1
   repository:
