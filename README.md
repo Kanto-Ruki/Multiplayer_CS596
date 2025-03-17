@@ -8,6 +8,8 @@ Scissors would have a long range
 
 The original six sounds would have been audio for announcing attacks (3 for the main attacks), 1 for critical hits, 1 for being hit, and 1 for KO
 
-I sadly did not have a trumpet sprite on hand to reinforce the trumpet sound effect
+I sadly did not have a trumpet sprite on hand to reinforce the trumpet sound effect, Trumpet sounds by Zuluonedrop
+
+Zuluonedrop: https://freesound.org/people/zuluonedrop/
 
 Additional Documenetation: https://docs.google.com/document/d/1VeckKRL55cz-7dnkFFuoBaKf9UatPi4OinpjjeapXbg/edit?usp=sharing
